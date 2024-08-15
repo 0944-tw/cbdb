@@ -1,31 +1,38 @@
-import { parse, stringify } from "https://deno.land/std@0.207.0/yaml/mod.ts";
-import { Markdown,link } from "https://deno.land/x/deno_markdown/mod.ts";
-import {resolve} from "https://deno.land/std/path/mod.ts";
+const fs = require('fs')
+const axios = require("axios")
+var HttpsProxyAgent = require('https-proxy-agent');
 
- (async() => {
-  console.log("CBMC Fetcher")
-  const client=Deno.createHttpClient({
-  proxy: {
-    url: 'http://210.61.207.92',
-  }
-});
-    const latestPost = (await fetch('https://api.cbmc.club/v1/latest?limit=1'),{client})
-    const CurrentPost = await Deno.readFile("./info.json")
-    const decoder = new TextDecoder("utf-8");
-    console.log("Latest Post Fetched Data")
-    console.log(latestPost.client)
-    const CurrentPostJSON = JSON.parse(decoder.decode(CurrentPost))
-    console.log(CurrentPostJSON)
-    const json = await latestPost.json()
-    console.log(json)
+var posts = {}
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+const fetchLatest = async () => {
+    const latestData = fs.readFileSync("./info.json")
+    const latest = JSON.parse(latestData)
+    const proxy = new HttpsProxyAgent.HttpsProxyAgent(`http://160.86.242.23:8080`)
+    await wait(1000)
+    console.log("Connection Emstablished")
+    const latestPost = await axios.get('https://api.cbmc.club/v1/latest?limit=1',{
+        httpsAgent: proxy
+    })
+    console.log("Fetched Latest Post")
+    const json = latestPost.data
     const id = json.posts["1"].post.id.platform
     //
-    for (let i = 0; CurrentPostJSON.totalPosts < id;i++){
+    for (let i = latest.totalPosts; i < id;i++){
         console.log("Fetching Post " + i)
-        const post = await fetch(`https://api.cbmc.club/v1/post/${i}`,{client})
-        const json = await post.json()
-        posts[i] = json
-        console.log(posts[i])
+        try {
+            const post = await axios.get(`https://api.cbmc.club/v1/post/${i}`,{
+                httpsAgent:  proxy
+        
+                 
+            }) 
+            const json = post.data
+            posts[i] = json
+            console.log(posts[i])
+        } catch (error) {
+            posts[i] = error.data
+        }
     }
-   Deno.writeTextFile("latest.json",JSON.stringify(posts))
-})()
+    fs.writeFileSync('posts.json', JSON.stringify(posts))
+    fs.writeFileSync('info.json', JSON.stringify({totalPosts: id}))
+}
+fetchLatest()
