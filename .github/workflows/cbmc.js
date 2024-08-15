@@ -18,7 +18,7 @@ const axget = async (url,config) => {
 const fetchLatest = async () => {
     const latestData = await fs.readFileSync("./info.json")
     const oldDataFile = await  fs.readFileSync("./posts.json")
-    const oldData = JSON.parse(oldData)
+    const oldData = JSON.parse(oldDataFile)
     const latest = JSON.parse(latestData)
     const proxy =  new HttpsProxyAgent.HttpsProxyAgent(`http://160.86.242.23:8080`)
     await wait(1000)
