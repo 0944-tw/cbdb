@@ -42,7 +42,7 @@ jobs:
       - name: "Update"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run:  npm install && node .github/workflows/cbmc.js
+        run:  npm install axios && node .github/workflows/cbmc.js
       - name: "Update from Local"
         uses: test-room-7/action-update-file@v1
         with:
