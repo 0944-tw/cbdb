@@ -7,10 +7,6 @@ import {resolve} from "https://deno.land/std/path/mod.ts";
   const client=Deno.createHttpClient({
   proxy: {
     url: 'http://210.61.207.92',
-    basicAuth: {
-      username: '',
-      password: ''
-    }
   }
 });
     const latestPost = (await fetch('https://api.cbmc.club/v1/latest?limit=1'),{client})
