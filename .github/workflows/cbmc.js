@@ -17,8 +17,9 @@ const axget = async (url,config) => {
 }
 const fetchLatest = async () => {
     const latestData = fs.readFileSync("./info.json")
+    const oldData = require("./posts.json")
     const latest = JSON.parse(latestData)
-    const proxy = new HttpsProxyAgent.HttpsProxyAgent(`http://160.86.242.23:8080`)
+    const proxy =  new HttpsProxyAgent.HttpsProxyAgent(`http://160.86.242.23:8080`)
     await wait(1000)
     console.log("Connection Emstablished")
     const latestPost = await axget('https://api.cbmc.club/v1/latest?limit=1',{
@@ -43,7 +44,7 @@ const fetchLatest = async () => {
             posts[i] = error.data
         }
     }
-    fs.writeFileSync('posts.json', JSON.stringify(posts))
+    fs.writeFileSync('posts.json', JSON.stringify(Object.assign(oldData,posts)))
     fs.writeFileSync('info.json', JSON.stringify({totalPosts: id}))
 }
 fetchLatest()
