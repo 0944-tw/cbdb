@@ -5,10 +5,14 @@ import {resolve} from "https://deno.land/std/path/mod.ts";
  (async() => {
   console.log("CBMC Fetcher")
     const latestPost = (await fetch('https://api.cbmc.club/v1/latest?limit=1'))
+    const CurrentPost = await Deno.readFile("./info.json")
+    const CurrentPostJSON = JSON.parse(CurrentPost)
+    console.log(CurrentPostJSON)
     const json = await latestPost.json()
+    console.log(json)
     const id = json.posts["1"].post.id.platform
     //
-    for (let i = 0; i < id;i++){
+    for (let i = 0; CurrentPostJSON.totalPosts < id;i++){
         console.log("Fetching Post " + i)
         const post = await fetch(`https://api.cbmc.club/v1/post/${i}`)
         const json = await post.json()
