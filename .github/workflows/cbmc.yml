@@ -46,7 +46,7 @@ jobs:
       - name: "Update from Local"
         uses: test-room-7/action-update-file@v1
         with:
-           file-path: ./
+           file-path: ./*.json
            commit-msg: Update resources
            github-token: ${{ secrets.API_KEY }}
            allow-removing: true
