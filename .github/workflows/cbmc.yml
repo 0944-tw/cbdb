@@ -48,5 +48,5 @@ jobs:
         with:
            file-path: ./
            commit-msg: Update resources
-           github-token: ${{ secrets.GITHUB_TOKEN }}
+           github-token: ${{ secrets.API_KEY }}
            allow-removing: true
