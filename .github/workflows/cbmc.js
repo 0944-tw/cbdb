@@ -6,7 +6,9 @@ import {resolve} from "https://deno.land/std/path/mod.ts";
   console.log("CBMC Fetcher")
     const latestPost = (await fetch('https://api.cbmc.club/v1/latest?limit=1'))
     const CurrentPost = await Deno.readFile("./info.json")
-    const CurrentPostJSON = JSON.parse(CurrentPost)
+    const decoder = new TextDecoder("utf-8");
+
+    const CurrentPostJSON = JSON.parse(decoder.decode(CurrentPost))
     console.log(CurrentPostJSON)
     const json = await latestPost.json()
     console.log(json)
