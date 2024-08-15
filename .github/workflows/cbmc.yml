@@ -35,14 +35,15 @@ jobs:
         uses: actions/checkout@main
 
       - name: "Setup Deno"
-        uses: denolib/setup-deno@v2
+        uses: actions/setup-node@v4
         with:
-          deno-version: v1.x
-
+           node-version: 'latest'
+      
       - name: "Update"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: deno run --allow-net --allow-env --allow-write --allow-read --unstable --no-check .github/workflows/cbmc.js
+      - run: npm install
+      - run: node .github/workflows/cbmc.js
       - name: "Update from Local"
         uses: test-room-7/action-update-file@v1
         with:
