@@ -1,0 +1,52 @@
+name: CBFetch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+jobs:
+  update-md:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@main
+
+      - name: "Setup Deno"
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.x
+
+      - name: "Update"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: deno run --allow-net --allow-env --allow-write --allow-read .github/workflows/cbmc.js
+      - name: "Update from Local"
+        uses: test-room-7/action-update-file@v1
+        with:
+           file-path: ./
+           commit-msg: Update resources
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           allow-removing: true
