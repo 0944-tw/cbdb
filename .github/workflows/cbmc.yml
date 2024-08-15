@@ -1,8 +1,5 @@
 name: CBFetch
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
