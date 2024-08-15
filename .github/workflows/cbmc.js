@@ -13,7 +13,7 @@ import {resolve} from "https://deno.land/std/path/mod.ts";
     const CurrentPost = await Deno.readFile("./info.json")
     const decoder = new TextDecoder("utf-8");
     console.log("Latest Post Fetched Data")
-    console.log(latestPost)
+    console.log(latestPost.client)
     const CurrentPostJSON = JSON.parse(decoder.decode(CurrentPost))
     console.log(CurrentPostJSON)
     const json = await latestPost.json()
