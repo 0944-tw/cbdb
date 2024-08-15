@@ -4,7 +4,16 @@ import {resolve} from "https://deno.land/std/path/mod.ts";
 
  (async() => {
   console.log("CBMC Fetcher")
-    const latestPost = (await fetch('https://api.cbmc.club/v1/latest?limit=1'))
+  const client=Deno.createHttpClient({
+  proxy: {
+    url: 'http://210.61.207.92',
+    basicAuth: {
+      username: '',
+      password: ''
+    }
+  }
+});
+    const latestPost = (await fetch('https://api.cbmc.club/v1/latest?limit=1'),{client})
     const CurrentPost = await Deno.readFile("./info.json")
     const decoder = new TextDecoder("utf-8");
 
@@ -16,7 +25,7 @@ import {resolve} from "https://deno.land/std/path/mod.ts";
     //
     for (let i = 0; CurrentPostJSON.totalPosts < id;i++){
         console.log("Fetching Post " + i)
-        const post = await fetch(`https://api.cbmc.club/v1/post/${i}`)
+        const post = await fetch(`https://api.cbmc.club/v1/post/${i}`,{client})
         const json = await post.json()
         posts[i] = json
         console.log(posts[i])
