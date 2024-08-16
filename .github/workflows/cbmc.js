@@ -49,7 +49,7 @@ const fetchLatest = async () => {
                 httpsAgent:  proxy
            
             })            
-    fs.writeFileSync('latestPost.json',JSON.stringify(LatestPost.data)
+    fs.writeFileSync('latestPost.json',JSON.stringify(LatestPost.data))
     fs.writeFileSync('posts.json', JSON.stringify(Object.assign(oldData,posts)))
     fs.writeFileSync('info.json', JSON.stringify({totalPosts: id}))
 }
