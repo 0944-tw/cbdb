@@ -45,6 +45,11 @@ const fetchLatest = async () => {
             posts[i] = error.data
         }
     }
+    const LatestPost = await axget("https://api.cbmc.club/v1/latest?limit=300",{
+                httpsAgent:  proxy
+           
+            })            
+    fs.writeFileSync('latestPost.json',JSON.stringify(LatestPost.data)
     fs.writeFileSync('posts.json', JSON.stringify(Object.assign(oldData,posts)))
     fs.writeFileSync('info.json', JSON.stringify({totalPosts: id}))
 }
