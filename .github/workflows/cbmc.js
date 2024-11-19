@@ -9,6 +9,8 @@ const axget = async (url,config) => {
     const response = await axios.get(url,config)
     return response
  } catch (error) {
+    console.log("Something Went Wrong While Creating HTTP Request")
+    console.log(error)
     if (error.code === 'ECONNRESET'){
         console.log("Connection Reset")
         return axget(url,config)
@@ -16,6 +18,7 @@ const axget = async (url,config) => {
  }
 }
 const fetchLatest = async () => {
+    console.log("Starting Fetching Post")
     const latestData = await fs.readFileSync("./info.json")
     const oldDataFile = await  fs.readFileSync("./posts.json")
     const oldData = JSON.parse(oldDataFile)
@@ -27,7 +30,7 @@ const fetchLatest = async () => {
         httpsAgent: proxy
     })
     console.log("Fetched Latest Post")
-   console.log(latestPost)
+    console.log(latestPost)
     const json = latestPost.data
     const id = json.posts["1"].post.id.platform
     //
@@ -36,8 +39,6 @@ const fetchLatest = async () => {
         try {
             const post = await axget(`https://api.cbmc.club/v1/post/${i}`,{
                 httpsAgent:  proxy
-        
-                 
             }) 
             const json = post.data
             posts[i] = json
