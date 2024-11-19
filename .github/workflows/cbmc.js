@@ -17,16 +17,17 @@ const axget = async (url,config) => {
     }
  }
 }
+const api = "tw3.shdtw.cloud:20016"
 const fetchLatest = async () => {
     console.log("Starting Fetching Post")
     const latestData = await fs.readFileSync("./info.json")
     const oldDataFile = await  fs.readFileSync("./posts.json")
     const oldData = JSON.parse(oldDataFile)
     const latest = JSON.parse(latestData)
-    const proxy =  new HttpsProxyAgent.HttpsProxyAgent(`http://60.199.29.41:8111`)
+    // const proxy =  new HttpsProxyAgent.HttpsProxyAgent(`http://60.199.29.41:8111`)
     await wait(1000)
     console.log("Connection Emstablished")
-    const latestPost = await axget('https://api.cbmc.club/v1/latest?limit=1',{
+    const latestPost = await axget(`https://${api}/v1/latest?limit=1`,{
         httpsAgent: proxy
     })
     console.log("Fetched Latest Post")
@@ -37,8 +38,7 @@ const fetchLatest = async () => {
     for (let i = latest.totalPosts; i < id;i++){
         console.log("Fetching Post " + i)
         try {
-            const post = await axget(`https://api.cbmc.club/v1/post/${i}`,{
-                httpsAgent:  proxy
+            const post = await axget(`https://${api}/v1/post/${i}`,{
             }) 
             const json = post.data
             posts[i] = json
@@ -47,7 +47,7 @@ const fetchLatest = async () => {
             posts[i] = error.data
         }
     }
-    const LatestPost = await axget("https://api.cbmc.club/v1/latest?limit=300",{
+    const LatestPost = await axget(`https://${api}/v1/latest?limit=300`,{
                 httpsAgent:  proxy
            
             })            
