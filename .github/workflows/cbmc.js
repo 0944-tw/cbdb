@@ -20,7 +20,7 @@ const fetchLatest = async () => {
     const oldDataFile = await  fs.readFileSync("./posts.json")
     const oldData = JSON.parse(oldDataFile)
     const latest = JSON.parse(latestData)
-    const proxy =  new HttpsProxyAgent.HttpsProxyAgent(`http://160.86.242.23:8080`)
+    const proxy =  new HttpsProxyAgent.HttpsProxyAgent(`http://60.199.29.41:8111`)
     await wait(1000)
     console.log("Connection Emstablished")
     const latestPost = await axget('https://api.cbmc.club/v1/latest?limit=1',{
