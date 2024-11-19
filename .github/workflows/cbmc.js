@@ -27,6 +27,7 @@ const fetchLatest = async () => {
         httpsAgent: proxy
     })
     console.log("Fetched Latest Post")
+   console.log(latestPost)
     const json = latestPost.data
     const id = json.posts["1"].post.id.platform
     //
