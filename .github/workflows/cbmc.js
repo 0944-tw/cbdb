@@ -28,7 +28,7 @@ const fetchLatest = async () => {
     await wait(1000)
     console.log("Connection Emstablished")
     const latestPost = await axget(`https://${api}/v1/latest?limit=1`,{
-        httpsAgent: proxy
+      //  httpsAgent: proxy
     })
     console.log("Fetched Latest Post")
     console.log(latestPost)
