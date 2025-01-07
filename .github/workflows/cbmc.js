@@ -48,7 +48,7 @@ const fetchLatest = async () => {
         }
     }
     const LatestPost = await axget(`http://${api}/v1/latest?limit=300`,{
-                httpsAgent:  proxy
+             //   httpsAgent:  proxy
            
             })            
     fs.writeFileSync('latestPost.json',JSON.stringify(LatestPost.data))
