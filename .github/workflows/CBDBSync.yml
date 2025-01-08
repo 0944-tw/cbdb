@@ -23,13 +23,13 @@ on:
         type: environment
         required: false
 jobs:
-  update-md:
+  cbdb-sync:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
         uses: actions/checkout@main
 
-      - name: "Setup Deno"
+      - name: "NodeJS 設定"
         uses: actions/setup-node@v4
         with:
            node-version: 'latest'
