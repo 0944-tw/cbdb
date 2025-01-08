@@ -1,0 +1,233 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      algoliasearch:
+        specifier: ^5.4.1
+        version: 5.4.1
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
+      https-proxy-agent:
+        specifier: ^7.0.5
+        version: 7.0.5
+
+packages:
+
+  '@algolia/client-abtesting@5.4.1':
+    resolution: {integrity: sha512-wJQDAqGPnvKxBnE3IZ9hKaYAumlGN3zAcAXQiFdvDDj5EXwwNrdLDjmvzt+e/QGPgYPqSIjCeiQMqDHevBmMLA==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/client-analytics@5.4.1':
+    resolution: {integrity: sha512-u8jb5wvfDDOQj/u/qOacd+1GJjSjazFUtGBMFJ8SAlKmU0u/GL+sMrEC0fz0RmPqP/ivZ25qcyCk1n8CpSQGwg==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/client-common@5.4.1':
+    resolution: {integrity: sha512-IffPD+CETiR8YJMVC1lcjnhETLpJ2L0ORZCbbRvwo/S11D1j/keR7AqKVMn4TseRJCfjmBFOcFrC+m4sXjyQWA==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/client-personalization@5.4.1':
+    resolution: {integrity: sha512-WqxZRlOBcsJlxO6I0abnGkA1Grjcw0rEs4hEu0SZb+GL9lUsZnIVGNAn5h2GLaMx6kR48W8Ep4xU10jP0NNvKA==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/client-search@5.4.1':
+    resolution: {integrity: sha512-nCgWY2p0tZgBqJKmA5E6B3VW+7uqxi1Orf88zNWOihJBRFeOV932pzG4vGrX9l0+p0o/vJabYxuomO35rEt5dw==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/recommend@5.4.1':
+    resolution: {integrity: sha512-OgXki3OHFthEVrsv8GtKNxqQw7ww4u2m0iXl+9a/E+FhTD0iJcS2rACrYB8y6/HRTFQMqML509M0I1B/dXy6ig==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/requester-browser-xhr@5.4.1':
+    resolution: {integrity: sha512-J6+YfU+maR0nIbsYRHoq0UpneilX97hrZzPuuvSoBojQmPo8PeCXKGeT/F0D8uFI6G4CMTKEPGmQYrC9IpCbcQ==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/requester-fetch@5.4.1':
+    resolution: {integrity: sha512-AO/C1pqqpIS8p2IsfM5x92S+UBKkcIen5dHfMEh1rnV0ArWDreeqrtxMD2A+6AjQVwYeZNy56w7o7PVIm6mc8g==}
+    engines: {node: '>= 14.0.0'}
+
+  '@algolia/requester-node-http@5.4.1':
+    resolution: {integrity: sha512-2Y3vffc91egwFxz0SjXFEH4q8nvlNJHcz+0//NaWItRU68AvD+3aI/j66STPjkLQOC0Ku6ckA9ChhbOVfrv+Uw==}
+    engines: {node: '>= 14.0.0'}
+
+  agent-base@7.1.1:
+    resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
+    engines: {node: '>= 14'}
+
+  algoliasearch@5.4.1:
+    resolution: {integrity: sha512-8LpK9JOiZQMUVXGrvieMhgG9rhNXD5TTycBCXMV/KShHFPklMkeHVo+HmFOH3lnQFi74M0Qhs/RXu+dfomCMWQ==}
+    engines: {node: '>= 14.0.0'}
+
+  asynckit@0.4.0:
+    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+
+  axios@1.7.7:
+    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
+
+  combined-stream@1.0.8:
+    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
+    engines: {node: '>= 0.8'}
+
+  debug@4.3.7:
+    resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  delayed-stream@1.0.0:
+    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
+    engines: {node: '>=0.4.0'}
+
+  follow-redirects@1.15.9:
+    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+
+  form-data@4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
+
+  https-proxy-agent@7.0.5:
+    resolution: {integrity: sha512-1e4Wqeblerz+tMKPIq2EMGiiWW1dIjZOksyHWSUm1rmuvw/how9hBHZ38lAGj5ID4Ik6EdkOw7NmWPy6LAwalw==}
+    engines: {node: '>= 14'}
+
+  mime-db@1.52.0:
+    resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
+    engines: {node: '>= 0.6'}
+
+  mime-types@2.1.35:
+    resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
+    engines: {node: '>= 0.6'}
+
+  ms@2.1.3:
+    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+
+  proxy-from-env@1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
+snapshots:
+
+  '@algolia/client-abtesting@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+      '@algolia/requester-browser-xhr': 5.4.1
+      '@algolia/requester-fetch': 5.4.1
+      '@algolia/requester-node-http': 5.4.1
+
+  '@algolia/client-analytics@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+      '@algolia/requester-browser-xhr': 5.4.1
+      '@algolia/requester-fetch': 5.4.1
+      '@algolia/requester-node-http': 5.4.1
+
+  '@algolia/client-common@5.4.1': {}
+
+  '@algolia/client-personalization@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+      '@algolia/requester-browser-xhr': 5.4.1
+      '@algolia/requester-fetch': 5.4.1
+      '@algolia/requester-node-http': 5.4.1
+
+  '@algolia/client-search@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+      '@algolia/requester-browser-xhr': 5.4.1
+      '@algolia/requester-fetch': 5.4.1
+      '@algolia/requester-node-http': 5.4.1
+
+  '@algolia/recommend@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+      '@algolia/requester-browser-xhr': 5.4.1
+      '@algolia/requester-fetch': 5.4.1
+      '@algolia/requester-node-http': 5.4.1
+
+  '@algolia/requester-browser-xhr@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+
+  '@algolia/requester-fetch@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+
+  '@algolia/requester-node-http@5.4.1':
+    dependencies:
+      '@algolia/client-common': 5.4.1
+
+  agent-base@7.1.1:
+    dependencies:
+      debug: 4.3.7
+    transitivePeerDependencies:
+      - supports-color
+
+  algoliasearch@5.4.1:
+    dependencies:
+      '@algolia/client-abtesting': 5.4.1
+      '@algolia/client-analytics': 5.4.1
+      '@algolia/client-common': 5.4.1
+      '@algolia/client-personalization': 5.4.1
+      '@algolia/client-search': 5.4.1
+      '@algolia/recommend': 5.4.1
+      '@algolia/requester-browser-xhr': 5.4.1
+      '@algolia/requester-fetch': 5.4.1
+      '@algolia/requester-node-http': 5.4.1
+
+  asynckit@0.4.0: {}
+
+  axios@1.7.7:
+    dependencies:
+      follow-redirects: 1.15.9
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  combined-stream@1.0.8:
+    dependencies:
+      delayed-stream: 1.0.0
+
+  debug@4.3.7:
+    dependencies:
+      ms: 2.1.3
+
+  delayed-stream@1.0.0: {}
+
+  follow-redirects@1.15.9: {}
+
+  form-data@4.0.0:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+
+  https-proxy-agent@7.0.5:
+    dependencies:
+      agent-base: 7.1.1
+      debug: 4.3.7
+    transitivePeerDependencies:
+      - supports-color
+
+  mime-db@1.52.0: {}
+
+  mime-types@2.1.35:
+    dependencies:
+      mime-db: 1.52.0
+
+  ms@2.1.3: {}
+
+  proxy-from-env@1.1.0: {}
