@@ -38,7 +38,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           AG_TOKEN: ${{ secrets.ALGOLIA_KEY }}
-        run:  npm install axios https-proxy-agent && node .github/workflows/cbmc.js
+        run:  npm install axios https-proxy-agent && node .github/workflows/CBDBSync.js
       - name: "Update from Local"
         uses: test-room-7/action-update-file@v1
         with:
