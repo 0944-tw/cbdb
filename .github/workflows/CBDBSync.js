@@ -1,17 +1,17 @@
 const fs = require("fs");
 const { type } = require("os");
 const CBMC = {};
-CBMC.api = "https://api.cbmc.club";
+CBMC.api = "tw3.shdtw.cloud:20016";
 CBMC.fetchLatest = async (limit) => {
-  const latest = await fetch("https://api.cbmc.club/v1/latest?limit=" + limit);
+  const latest = await fetch(`https://${CBMC.api}/v1/latest?limit=` + limit);
   return await latest.json();
 };
 CBMC.fetchPost = async (id) => {
-  const post = await fetch("https://api.cbmc.club/v1/post/" + id);
+  const post = await fetch(`https://${CBMC.api}/v1/post/` + id);
   return await post.json();
 };
 CBMC.getStatus = async (id) => {
-  const status = await fetch("https://api.cbmc.club/v1/find/" + id);
+  const status = await fetch(`https://${CBMC.api}/v1/find/` + id);
   return await status.json();
 };
 CBMC.getPostsCount = async () => {
