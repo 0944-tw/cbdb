@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 靠杯資料庫
 用來做搜尋功能或許很有用.
 使用GH Actions更新資料
@@ -14,3 +15,13 @@
 最新文章
 ## `posts.json`
 全部文章
+=======
+> [!CAUTION]
+> CBDB同步目前處於一個半殘廢狀態. Algolia及CBDB無法準確同步至最新
+# CBDB 
+## 重寫CBDBSync中 ⚠️
+- [ ] Aloglia自動更新
+- [ ] 重寫資料結槓
+- [ ] 能用
+- [ ] 重寫整個代碼
+>>>>>>> fa1dba74bbf1faec1f73faf41bafe9edc7b059eb
