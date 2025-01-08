@@ -33,9 +33,13 @@ const UpdateCBDB = async () => {
     );
     console.log(`Syncing ${latestPostsID - info.totalPosts} posts`);
   }
+  const promises = [];
+  let lastRequestTime = Date.now();
   for (let i = info.totalPosts; i < latestPostsID; i++) {
     const post = await CBMC.fetchPost(i);
-    console.log(`獲取文章成功 ${i} / ${latestPostsID}`);
+
+    console.log(`獲取文章成功 ${i} / ${latestPostsID} | 耗時: ${Date.now() - lastRequestTime}ms ETA: ${((Date.now() - lastRequestTime) * (latestPostsID - i)) / 1000} 秒`);
+    lastRequestTime = Date.now();
     CBMC[i] = post;
   }
   console.log("Writing to file...");
