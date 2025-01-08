@@ -58,11 +58,7 @@ const fetchLatest = async () => {
     return Object.assign(oldData,posts)
 }
 const updateAlgolia = (data) =>{
-<<<<<<< HEAD
-    const client = algoliasearch('76O5YAWFNC', 'ec74ea084859bbb8c72367e4d9a67464');
-=======
     const client = algoliasearch('76O5YAWFNC', process.env.AG_TOKEN);
->>>>>>> fa1dba74bbf1faec1f73faf41bafe9edc7b059eb
     const formatted = []
     console.log(data)
     for (const [key, value] of Object.entries(data)) {
