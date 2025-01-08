@@ -34,9 +34,8 @@ const UpdateCBDB = async () => {
     console.log(`Syncing ${latestPostsID - info.totalPosts} posts`);
   }
   for (let i = info.totalPosts; i < latestPostsID; i++) {
-    console.log("Fetching Post " + i);
     const post = await CBMC.fetchPost(i);
-    console.log(`獲取文章 ${i} 完成`);
+    console.log(`獲取文章成功 ${i} / ${latestPostsID}`);
     CBMC[i] = post;
   }
   console.log("Writing to file...");
